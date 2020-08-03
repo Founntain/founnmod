@@ -3,6 +3,7 @@ package de.founntain.founnmod.handlers;
 import de.founntain.founnmod.FounnMod;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
@@ -26,18 +27,25 @@ public class LivingHurtEventHandler {
                 printConsoleMessage("Playername: " + event.getSource().getTrueSource().getName().getUnformattedComponentText());
             }
         }
-
-        if(event.getSource().getDamageType() != "player") return;
-
-        printConsoleMessage(event.getSource().getDamageType());
-
+        
+        if(event.getSource().getDamageType() != "player") return;        
+        
         World world = entity.getEntityWorld();
-
         BlockPos pos = entity.getPosition();
-
+        PlayerEntity player = (PlayerEntity) event.getSource().getTrueSource();
+        ItemStack activeItem = player.getHeldItem(player.getActiveHand());
+        
+        printConsoleMessage("Damagetype: " + event.getSource().getDamageType());
         printConsoleMessage("GetImmediateSource: " + event.getSource().getImmediateSource().getType().toString());
+        printConsoleMessage("GetHeldItem: " + player.getHeldItem(player.getActiveHand()));
+        printConsoleMessage("getHeldItemClass: " + activeItem.getTranslationKey().toString());
+        printConsoleMessage("getHeldItemClassBoolean: " + (activeItem.getTranslationKey().toString().equals("item.founnmod.foxorb_sword")));
 
-        world.createExplosion(event.getSource().getTrueSource().getEntity(), pos.getX(), pos.getY(), pos.getZ(), 10, Explosion.Mode.BREAK);
+        if(!activeItem.getTranslationKey().toString().equals("item.founnmod.foxorb_sword")) return;
+
+        printConsoleMessage("Spawning explosion on coord [" + pos.getX() +", "+ pos.getY() + ", " + pos.getZ() + "]");
+
+        world.createExplosion(event.getSource().getTrueSource().getEntity(), pos.getX(), pos.getY(), pos.getZ(), 5, Explosion.Mode.BREAK);
     }
 
     private static void printConsoleMessage(String msg) {

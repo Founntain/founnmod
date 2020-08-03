@@ -7,7 +7,7 @@ import net.minecraft.item.IItemTier;
 import net.minecraft.item.crafting.Ingredient;
 
 public enum ModItemTier implements IItemTier {
-    FOXORB(10, 5500, 22F, 3.0F, 30, () -> {
+    FOXORB(10, 2500, 30F, 3.0F, 30, () -> {
         return Ingredient.fromItems(RegistryHandler.FOXORB.get());
     });
 
