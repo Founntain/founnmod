@@ -7,6 +7,7 @@ import de.founntain.founnmod.tools.ModItemTier;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.PickaxeItem;
+import net.minecraft.item.SwordItem;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
@@ -28,6 +29,9 @@ public class RegistryHandler {
     //Tools
     public static final RegistryObject<PickaxeItem> FOXORB_PICKAXE = ITEMS.register("foxorb_pickaxe", () -> 
         new PickaxeItem(ModItemTier.FOXORB, 0, 0.0F, new Item.Properties().group(FounnMod.TAB))
+    );
+    public static final RegistryObject<SwordItem> FOXORB_SWORD = ITEMS.register("foxorb_sword", () -> 
+        new SwordItem(ModItemTier.FOXORB, 6, -2.4F, new Item.Properties().group(FounnMod.TAB))
     );
 
     //Blocks

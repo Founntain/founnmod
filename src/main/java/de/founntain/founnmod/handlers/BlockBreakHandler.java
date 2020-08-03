@@ -11,16 +11,18 @@ import net.minecraftforge.fml.common.Mod;
 public class BlockBreakHandler {
     public BlockBreakHandler() {
         super();
-
-        System.out.println("BLOCKBREAK => READY");
     }
 
     @SubscribeEvent
     public static void onBreakEvent(BlockEvent.BreakEvent event){
-        System.out.println("BLOCKBREAK => Player: " + event.getPlayer().getName());
+        printConsoleMessage("Player: " + event.getPlayer().getName().toString());
 
         Block block = event.getState().getBlock();
-        System.out.println("BLOCKBREAK => HarvestLevel: " + block.getHarvestLevel(block.getDefaultState()));
-        System.out.println("BLOCKBREAK => HarvestTool: " + block.getHarvestTool(block.getDefaultState()).getName());
+        printConsoleMessage("HarvestLevel: " + block.getHarvestLevel(block.getDefaultState()));
+        printConsoleMessage("HarvestTool: " + block.getHarvestTool(block.getDefaultState()).getName());
+    }
+
+    private static void printConsoleMessage(String msg) {
+        System.out.println("[BlockEvent.BreakEvent] " + msg);
     }
 }
