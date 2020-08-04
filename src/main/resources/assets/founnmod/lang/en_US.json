@@ -1,8 +1,16 @@
 {
     "block.founnmod.foxorb_ore": "Foxorb Ore",
+    "block.founnmod.foxpearl_ore": "Foxpearl Ore",
+    "block.founnmod.foxgem_netherore": "Foxgem Ore",
+    "block.founnmod.foxorb_block": "Block of Foxorb",
     "item.founnmod.bacon": "Bacon",
     "item.founnmod.foxorb": "Foxorb",
+    "item.founnmod.foxpearl": "Foxgem",
+    "item.founnmod.foxgem": "Foxgem",
     "item.founnmod.foxorb_sword": "Foxorb Sword",
     "item.founnmod.foxorb_pickaxe": "Foxorb Pickaxe",
+    "item.founnmod.foxorb_axe": "Foxorb Axe",
+    "item.founnmod.foxorb_shovel": "Foxorb Shovel",
+    "item.founnmod.foxorb_hoe": "Foxorb Hoe",
     "itemGroup.founnmodTab": "FounnMod Items"
 }

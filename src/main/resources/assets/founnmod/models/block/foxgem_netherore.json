@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+      "all": "founnmod:blocks/foxgem_netherore"
+    }
+  }

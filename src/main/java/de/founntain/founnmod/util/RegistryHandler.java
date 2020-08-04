@@ -24,7 +24,9 @@ public class RegistryHandler {
 
     //Items
     public static final RegistryObject<Item> BACON = ITEMS.register("bacon", Bacon::new);
-    public static final RegistryObject<Item> FOXORB = ITEMS.register("foxorb", Foxorb::new);
+    public static final RegistryObject<Item> FOXORB = ITEMS.register("foxorb", Foxgem::new);
+    public static final RegistryObject<Item> FOXPEARL = ITEMS.register("foxpearl", Foxgem::new);
+    public static final RegistryObject<Item> FOXGEM = ITEMS.register("foxgem", Foxgem::new);
 
     //Tools
     public static final RegistryObject<PickaxeItem> FOXORB_PICKAXE = ITEMS.register("foxorb_pickaxe", () -> 
@@ -35,8 +37,14 @@ public class RegistryHandler {
     );
 
     //Blocks
-    public static final RegistryObject<Block> FOXORB_ORE = BLOCKS.register("foxorb_ore", FoxorbOre::new);
+    public static final RegistryObject<Block> FOXORB_ORE_BLOCK = BLOCKS.register("foxorb_ore", FoxorbOreBlock::new);
+    public static final RegistryObject<Block> FOXPEARL_ORE_BLOCK = BLOCKS.register("foxpearl_ore", FoxpearlOreBlock::new);
+    public static final RegistryObject<Block> FOXGEM_NETHERORE_BLOCK = BLOCKS.register("foxgem_netherore", FoxgemNetherOreBlock::new);
+    public static final RegistryObject<Block> FOXORB_BLOCK = BLOCKS.register("foxorb_block", FoxorbBlock::new);
 
     //BlockItems
-    public static final RegistryObject<Item> BACON_BLOCK_ITEM = ITEMS.register("foxorb_ore", () -> new BlockItemBase(FOXORB_ORE.get()));
+    public static final RegistryObject<Item> FOXORB_ORE_ITEM = ITEMS.register("foxorb_ore", () -> new BlockItemBase(FOXORB_ORE_BLOCK.get()));
+    public static final RegistryObject<Item> FOXPEARL_ORE_ITEM = ITEMS.register("foxpearl_ore", () -> new BlockItemBase(FOXPEARL_ORE_BLOCK.get()));
+    public static final RegistryObject<Item> FOXGEM_NETHERORE_ITEM = ITEMS.register("foxgem_netherore", () -> new BlockItemBase(FOXGEM_NETHERORE_BLOCK.get()));
+    public static final RegistryObject<Item> FOXORB_BLOCK_ITEM = ITEMS.register("foxorb_block", () -> new BlockItemBase(FOXORB_BLOCK.get()));
 }

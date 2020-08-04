@@ -2,12 +2,16 @@ package de.founntain.founnmod.tools;
 
 import java.util.function.Supplier;
 
+import de.founntain.founnmod.enums.Enchantability;
+import de.founntain.founnmod.enums.HarvestLevel;
+import de.founntain.founnmod.enums.ToolDurability;
+import de.founntain.founnmod.enums.ToolEfficiency;
 import de.founntain.founnmod.util.RegistryHandler;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.crafting.Ingredient;
 
 public enum ModItemTier implements IItemTier {
-    FOXORB(10, 2500, 30F, 3.0F, 30, () -> {
+    FOXORB(HarvestLevel.IRON, ToolDurability.FOXORB, ToolEfficiency.IRON, 3.0F, Enchantability.IRON, () -> {
         return Ingredient.fromItems(RegistryHandler.FOXORB.get());
     });
 
@@ -18,12 +22,12 @@ public enum ModItemTier implements IItemTier {
     private final int echantability;
     private final Supplier<Ingredient> repairMaterial;
 
-    ModItemTier(int harvesLevel, int maxUses, float efficiency, float attackDamage, int echantability, Supplier<Ingredient> repairMaterial){
-        this.harvesLevel = harvesLevel;
-        this.maxUses = maxUses;
-        this.efficiency = efficiency;
+    ModItemTier(HarvestLevel harvesLevel, ToolDurability toolDurability, ToolEfficiency toolEfficiency, float attackDamage, Enchantability echantability, Supplier<Ingredient> repairMaterial){
+        this.harvesLevel = harvesLevel.getValue();
+        this.maxUses = toolDurability.getValue();
+        this.efficiency = toolEfficiency.getValue();
         this.attackDamage = attackDamage;
-        this.echantability = echantability;
+        this.echantability = echantability.getValue();
         this.repairMaterial = repairMaterial;
     }
 

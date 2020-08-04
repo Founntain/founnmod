@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern":
+    [
+      "xxx",
+      "xxx",
+      "xxx"
+    ],
+    "key":
+    {
+      "x":
+      {
+        "item": "founnmod:foxorb"
+      }
+    },
+    "result":
+    {
+      "item": "founnmod:foxorb_block",
+      "count": 1
+    }
+  }

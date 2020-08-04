@@ -58,7 +58,7 @@ public class FounnMod
     public static final ItemGroup TAB = new ItemGroup("founnmodTab"){
         @Override
         public ItemStack createIcon(){
-            return new ItemStack(RegistryHandler.FOXORB.get());
+            return new ItemStack(RegistryHandler.FOXPEARL.get());
         }
     };
 }

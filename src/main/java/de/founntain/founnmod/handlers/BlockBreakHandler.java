@@ -1,6 +1,7 @@
 package de.founntain.founnmod.handlers;
 
 import de.founntain.founnmod.FounnMod;
+import de.founntain.founnmod.enums.HarvestLevel;
 import net.minecraft.block.Block;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.world.BlockEvent;
@@ -15,11 +16,18 @@ public class BlockBreakHandler {
 
     @SubscribeEvent
     public static void onBreakEvent(BlockEvent.BreakEvent event){
-        printConsoleMessage("Player: " + event.getPlayer().getName().toString());
+        if(event.getWorld().isRemote()) return;
+
+        printConsoleMessage("Player: " + event.getPlayer().getName().getUnformattedComponentText());
 
         Block block = event.getState().getBlock();
+
+        if(block.getHarvestTool(block.getDefaultState()) == null)
+            return;
+
         printConsoleMessage("HarvestLevel: " + block.getHarvestLevel(block.getDefaultState()));
         printConsoleMessage("HarvestTool: " + block.getHarvestTool(block.getDefaultState()).getName());
+        
     }
 
     private static void printConsoleMessage(String msg) {

@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smelting",
+    "ingredient": {
+      "item": "founnmod:foxorb_ore"
+    },
+    "result": "founnmod:foxorb",
+    "experience": 1.0,
+    "cookingtime": 100
+  }

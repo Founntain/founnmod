@@ -24,9 +24,11 @@ public class ModOreGen {
     @SubscribeEvent
     public static void generateOres(FMLLoadCompleteEvent event){
         for(Biome biome : ForgeRegistries.BIOMES){
-
-            if(biome.getCategory() != Category.NETHER && biome.getCategory() != Category.THEEND){
-                genOre(biome, 20, 8, 5, 60, FillerBlockType.NATURAL_STONE, RegistryHandler.FOXORB_ORE.get().getDefaultState(), 6);
+            if(biome.getCategory() == Category.NETHER){
+                genOre(biome, 30, 0, 5, 200, FillerBlockType.NETHER_ORE_REPLACEABLES, RegistryHandler.FOXGEM_NETHERORE_BLOCK.get().getDefaultState(), 5);
+            }else if(biome.getCategory() != Category.THEEND){
+                genOre(biome, 12, 5, 0, 60, FillerBlockType.NATURAL_STONE, RegistryHandler.FOXPEARL_ORE_BLOCK.get().getDefaultState(), 5);
+                genOre(biome, 6, 5, 0, 30, FillerBlockType.NATURAL_STONE, RegistryHandler.FOXORB_ORE_BLOCK.get().getDefaultState(), 2);
             }
         }
     }
