@@ -5,8 +5,11 @@ import de.founntain.founnmod.blocks.*;
 import de.founntain.founnmod.items.*;
 import de.founntain.founnmod.tools.ModItemTier;
 import net.minecraft.block.Block;
+import net.minecraft.item.AxeItem;
+import net.minecraft.item.HoeItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.PickaxeItem;
+import net.minecraft.item.ShovelItem;
 import net.minecraft.item.SwordItem;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -29,11 +32,24 @@ public class RegistryHandler {
     public static final RegistryObject<Item> FOXGEM = ITEMS.register("foxgem", Foxgem::new);
 
     //Tools
+    public static final RegistryObject<SwordItem> FOXORB_SWORD = ITEMS.register("foxorb_sword", () -> 
+        new SwordItem(ModItemTier.FOXORB, 0, -2.4F, new Item.Properties().group(FounnMod.TAB))
+    );
     public static final RegistryObject<PickaxeItem> FOXORB_PICKAXE = ITEMS.register("foxorb_pickaxe", () -> 
         new PickaxeItem(ModItemTier.FOXORB, 0, 0.0F, new Item.Properties().group(FounnMod.TAB))
     );
-    public static final RegistryObject<SwordItem> FOXORB_SWORD = ITEMS.register("foxorb_sword", () -> 
-        new SwordItem(ModItemTier.FOXORB, 6, -2.4F, new Item.Properties().group(FounnMod.TAB))
+    public static final RegistryObject<AxeItem> FOXORB_AXE = ITEMS.register("foxorb_axe", () -> 
+        new AxeItem(ModItemTier.FOXORB, 0, 0.0F, new Item.Properties().group(FounnMod.TAB))
+    );
+    public static final RegistryObject<ShovelItem> FOXORB_SHOVEL = ITEMS.register("foxorb_shovel", () -> 
+        new ShovelItem(ModItemTier.FOXORB, 0, 0.0F, new Item.Properties().group(FounnMod.TAB))
+    );
+    public static final RegistryObject<HoeItem> FOXORB_HOE = ITEMS.register("foxorb_hoe", () -> 
+        new HoeItem(ModItemTier.FOXORB, 0, 0.0F, new Item.Properties().group(FounnMod.TAB))
+    );
+
+    public static final RegistryObject<PickaxeItem> TNT_PICKAXE = ITEMS.register("tnt_pickaxe", () -> 
+        new PickaxeItem(ModItemTier.FOXORB, 0, 0.0F, new Item.Properties().group(FounnMod.TAB))
     );
 
     //Blocks
