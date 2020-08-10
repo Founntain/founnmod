@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "founnmod:foxgem"
+    },
+    {
+      "item": "founnmod:foxpearl"
+    }
+  ],
+  "result":
+  {
+    "item": "founnmod:inscribed_foxgem",
+    "count": 1
+  }
+}

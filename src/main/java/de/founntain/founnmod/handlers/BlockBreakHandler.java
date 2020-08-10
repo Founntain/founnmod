@@ -3,10 +3,14 @@ package de.founntain.founnmod.handlers;
 import de.founntain.founnmod.FounnMod;
 import de.founntain.founnmod.enums.HarvestLevel;
 import net.minecraft.block.Block;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundCategory;
+import net.minecraft.util.SoundEvent;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.registries.ForgeRegistries;
 
 @Mod.EventBusSubscriber(modid = FounnMod.MOD_ID, value = Dist.CLIENT)
 public class BlockBreakHandler {
@@ -27,7 +31,6 @@ public class BlockBreakHandler {
 
         printConsoleMessage("HarvestLevel: " + block.getHarvestLevel(block.getDefaultState()));
         printConsoleMessage("HarvestTool: " + block.getHarvestTool(block.getDefaultState()).getName());
-        
     }
 
     private static void printConsoleMessage(String msg) {

@@ -5,6 +5,7 @@ import de.founntain.founnmod.blocks.*;
 import de.founntain.founnmod.items.*;
 import de.founntain.founnmod.tools.ModItemTier;
 import net.minecraft.block.Block;
+import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.HoeItem;
 import net.minecraft.item.Item;
@@ -19,6 +20,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class RegistryHandler {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, FounnMod.MOD_ID);
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, FounnMod.MOD_ID);
+    public static final DeferredRegister<ContainerType<?>> CONTAINERS = DeferredRegister.create(ForgeRegistries.CONTAINERS, FounnMod.MOD_ID);
 
     public static void init(){
         ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
@@ -27,9 +29,16 @@ public class RegistryHandler {
 
     //Items
     public static final RegistryObject<Item> BACON = ITEMS.register("bacon", Bacon::new);
-    public static final RegistryObject<Item> FOXORB = ITEMS.register("foxorb", Foxgem::new);
-    public static final RegistryObject<Item> FOXPEARL = ITEMS.register("foxpearl", Foxgem::new);
-    public static final RegistryObject<Item> FOXGEM = ITEMS.register("foxgem", Foxgem::new);
+    public static final RegistryObject<Item> FOXORB = ITEMS.register("foxorb", InscribedFoxorb::new);
+    public static final RegistryObject<Item> FOXPEARL = ITEMS.register("foxpearl", InscribedFoxorb::new);
+    public static final RegistryObject<Item> FOXGEM = ITEMS.register("foxgem", InscribedFoxorb::new);
+    public static final RegistryObject<Item> INSCRIBED_FOXORB = ITEMS.register("inscribed_foxorb", InscribedFoxorb::new);
+    public static final RegistryObject<Item> INSCRIBED_FOXGEM = ITEMS.register("inscribed_foxgem", InscribedFoxorb::new);
+
+    //Container
+    // public static final RegistryObject<ContainerType<FoxFurnaceContainer>> FOX_FURNACE = CONTAINERS.register("fox_furnace", () -> {
+    //     IForgeContainerType.create(FoxFurnaceContainer::new);
+    // });
 
     //Tools
     public static final RegistryObject<SwordItem> FOXORB_SWORD = ITEMS.register("foxorb_sword", () -> 
